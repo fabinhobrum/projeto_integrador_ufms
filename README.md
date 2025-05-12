@@ -17,4 +17,4 @@ Desenvolver um site responsivo e interativo que sirva como vitrine profissional,
 - JavaScript (puro)
 - Git e GitHub
 
-Projeto hospedado no endereço https://projeto.fabiobrum.dev.br/
+Projeto hospedado no endereço: https://projeto.fabiobrum.dev.br/
