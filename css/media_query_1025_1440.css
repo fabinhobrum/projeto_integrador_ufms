@@ -1,0 +1,804 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none; /*remove os bulets do li*/
+    text-decoration: none; /* remove o sublinhado dos links*/    
+}
+
+:root{
+    /*FONTES*/
+    --font-primary: "Nunito", serif;
+    --font-secundary: "Montserrat", serif;
+    /*CORES*/
+    --primary-color: #000000;
+    --secondary-color: #C9C8C7;
+    --tertiary-color: #FFFFFF;
+    --highlight-color: #E65F80;
+    --link-color: #4e4d4d;
+    /*COR DE FUNDO*/
+    --background-color1: #FFFFFF;
+    --background-color2: #F8F9FA;
+}   
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+@media screen and (min-width:1025px) and (max-width: 1440px) {
+
+    body{
+        font-size: 16px;
+        width: auto;
+    }
+
+    /*CABECALHO*/
+
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .logo{
+        display: flex;
+        position: fixed;
+        top: 0;
+        z-index: 130;        
+    }
+
+    .logo img{
+        width: 3rem;
+        padding: .8rem;
+    }
+
+    .hamburguer{
+        display: none;
+    }
+
+    #menu{
+        width: 100%;
+        left: 0;    
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        height: 4.5rem;    
+        top: 0;
+        padding-right: 2rem;
+        background-color: transparent;
+        color: #FFFFFF;
+        transition: background-color 0.5s, color 0.5s;
+        z-index: 120;            
+    }
+
+    #menu li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-primary);
+        font-size: 1.2rem;    
+        padding: 1rem;
+        cursor: pointer;
+    }
+
+    #menu li a{
+        color: #FFFFFF;        
+    }
+
+    #menu li a:hover{
+        color: var(--highlight-color);
+        transition: color 0.5s;
+    }
+
+    #menu li a.active {
+        color: var(--highlight-color);
+    }
+
+    #menu.scrolled{
+        background-color: #FFFFFF;        
+    }
+
+    #menu.scrolled li a{    
+        color: var(--primary-color);        
+    }
+
+    #menu.scrolled li a:hover{    
+        color: var(--highlight-color);
+        transition: color 0.5s;        
+    }
+
+    #menu.scrolled li a.active{    
+        color: var(--highlight-color);        
+    }
+
+    header{
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        position: relative; /* para se usar um baner na posição absoluta precisamos informar que o header e relativo, este faz com que o banner fique dentro do dimencionamento do widht e do height*/
+    }
+
+    .container-img-wrapper{
+        width: 100%;
+        height: 100%;    
+        overflow: hidden;
+    }
+
+    .img-wrapper{
+        width: 100%;
+        background-color: #000000;
+    }
+
+    .img-wrapper img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /*opacity: 0.9;*/
+        animation: zoom 25s;
+        position: absolute; /* Posição absoluta para garantir que a imagem ocupe todo o espaço da .img-wrapper */
+        top: 0;
+        left: 0;
+        filter: brightness(.5); /*nivel de escurecimento da imagem*/
+    }
+
+    @keyframes zoom{ /*cria o movimento da imagem em zoom*/
+        0%{
+            transform: scale(1.3);
+        }
+        100%{
+            transform: scale(1.0);
+        }
+    }
+
+    #textContainer {
+        font-family: var(--font-secundary);
+        font-size: 2.5rem;
+        font-weight: 500;
+        padding-top: 1rem;
+        color: #FFFFFF;
+        text-align: center;
+        transition: opacity 1s ease; /* Transição suave */
+    }    
+
+    .banner-wrapper {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .banner{
+        width: 100%;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .banner h1{
+        width: auto;
+        font-family: var(--font-secundary);
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--tertiary-color);
+        text-shadow: 0.2rem 0.3rem 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner p{
+        width: 80%;
+        font-family: var(--font-primary);
+        font-size: 1.2rem;
+        font-weight: 200;
+        color: var(--secondary-color);
+        text-align: center;
+        padding-top: 1rem;
+        text-shadow: 0.2rem 0.2rem 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .botao-transp{
+        width: 12rem;
+        padding: 1rem;
+        margin-top: 3rem;
+        border: 2px solid #FFFFFF;
+        border-radius: 2.5rem;
+        background-color: transparent;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .botao-transp a{
+        color: var(--background-color2);
+        font-family: var(--font-primary);
+        font-size: 1.1rem;
+        text-transform: uppercase;    
+    }
+
+    .botao-transp:hover {
+        background-color: #fff;
+        border-color: #fff;
+    }
+
+    .botao-transp a:hover{
+        color: #000000;
+        font-weight: 500;
+    }
+
+
+    /*Sessão sobre mim*/
+    .sessao-sobre-mim{
+        width: 80%;
+        height: 48rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sessao-img{
+        width: 40%;
+        padding-top: 2rem;
+    }
+
+    .sessao-img img{
+        width: 100%;
+    }
+
+    .sessao-header{
+        width: 60%;
+    }
+
+    .sessao-cabecalho-1 h1{
+        font-family: var(--font-secundary);
+        font-weight: 300;
+        font-size: 2rem;
+        margin-top: 3rem;
+        padding: 2rem 0 1.5rem 0;
+    }
+
+    .sessao-cabecalho-1 span{
+        font-family: var(--font-secundary);
+        font-weight: 600;
+    }
+
+    .sessao-descricao h2{
+        font-family: var(--font-secundary);
+        padding-bottom: 1.5rem;
+        font-weight: 500;
+    }
+
+    .sessao-descricao span{
+        color: var(--highlight-color);
+    }
+
+    .sessao-descricao p{
+        font-family: var(--font-primary);
+        color: #6e6e6e;
+        padding-bottom: 1rem;
+    }
+
+    .footer-social ul{
+        display: flex;    
+        flex-direction: row;
+    }
+
+    .footer-social li{
+        padding-right: 1rem;
+        font-size: 1.8rem;        
+    }    
+
+    .footer-social li i{
+        width: 2rem;
+        height: 2rem;
+        color: #1f1f1f;
+        border: 2px solid #E5E5E5;
+        padding: .5rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;     
+        transition: transform 0.3s ease;   
+    }
+
+    .footer-social li i:hover{
+        color: var(--highlight-color);
+        border-color: var(--highlight-color);
+        transform: scale(0.9);
+    }
+
+
+    /*Nossos Serviços*/
+    .sessao-servicos{
+        width: 100%;
+        height: 61rem;
+        background-color: var(--background-color2);
+    }
+
+    .sessao-servicos-header{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sessao-servicos-header h1{
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 2rem;
+        margin-top: 3rem;
+        padding: 2rem 0 1.5rem 0;
+    }
+
+    .sessao-servicos-header span{
+        font-family: var(--font-primary);
+        font-weight: 600;
+    }
+
+    .sessao-servicos-header p{
+        font-family: var(--font-primary);
+        color: #6e6e6e;
+        padding-bottom: 1rem;
+    }
+
+    .sessao-servicos-body{
+        width: 80%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+
+    .servicos-body{
+        display: flex;
+        flex-wrap: wrap;        
+    }
+
+    .serv-body-top{
+        width: 30%;
+        min-height: 60%;
+        border: 2px solid #dddddd;
+        margin: .6rem;
+        border-radius: .3rem;
+        padding-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .serv-body-top i, .serv-body-bottom i{
+        font-size: 3.2rem;
+        padding: 1rem;
+        color: var(--highlight-color);
+    }
+
+    .serv-body-top h3, .serv-body-bottom h3{
+        font-family: var(--font-secundary);
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding-bottom: .5rem;
+    }    
+
+    .serv-body-top:hover .line, .serv-body-bottom:hover .line{
+        width: 5rem;
+    }
+
+    .serv-body-top p, .serv-body-bottom p{
+        font-family: var(--font-primary);
+        color: var(--link-color);
+        margin: 0 1.5rem;
+        text-align: justify;
+    }
+
+
+    /*Precisando de algum serviço espacial*/
+    .contato{
+        width: 100%;
+        height: 15rem;
+        background-color: var(--background-color1);
+    }
+
+    .contato-body{
+        width: 67%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 8rem;    
+    }
+
+    .botao-contato{
+        width: 9rem;
+        padding: 1.2rem;
+        margin-top: 2rem;
+        background-color: var(--highlight-color);
+        border: none;
+        border-radius: .3rem;    
+    }
+
+    .botao-contato a{
+        color: #FFFFFF;
+        font-family: var(--font-primary);
+        font-size: .9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .contato-body button{
+        transition: transform .3s ease;
+    }
+
+    .contato-body button:hover{
+        transform: scale(0.9);
+    }
+
+
+    /*Nossos Projetos*/
+    .projetos{
+        width: 100%;
+        height: 36rem;
+        background-color: var(--background-color2);
+    }
+
+    .projetos-header{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .projetos-header h1{
+        font-family: var(--font-primary);
+        font-weight: 300;
+        font-size: 2rem;
+        margin-top: 3rem;
+        padding: 2rem 0 1.5rem 0;
+    }
+
+    .projetos-header span{        
+        font-weight: 600;
+    }
+
+    .projetos-header p{
+        color: #6e6e6e;
+    }
+
+    .projetos-body{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding-top: 1rem;
+    }
+
+    .projetos-body-card{
+        position: relative;
+        background-color: #fafafa;
+        width: 30%;
+        height: 20rem;
+        border: 2px solid #dddddd;
+        margin: .6rem;
+        border-radius: .8rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .body-card-img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10rem;
+        opacity: .2;
+        color: var(--highlight-color);        
+    }
+    
+    .body-card {
+        text-align: center;
+        margin-top: 1.5rem;    
+        z-index: 2;
+    }
+    
+    .body-card h2 {
+        font-family: var(--font-primary);
+        font-size: 1.8rem;
+    }
+    
+    .body-card h3 {
+        font-family: var(--font-secundary);
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    
+    .body-card p {
+        font-family: var(--font-primary);
+        font-size: 1rem;
+        font-weight: 600;    
+    }
+    
+    .card-btn {
+        display: inline-block;
+        margin-top: 1.3rem;
+        padding: .7rem 1.5rem;
+        border: 2px solid #C9C8C7;
+        background-color: transparent;
+        color: #000000;
+        border-radius: 5rem;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .card-btn:hover{
+        border: 2px solid #E65F80;
+        background-color: #ffffff;
+        color: var(--highlight-color);
+    }
+
+
+    /*Formulario de Contato*/
+    .mensagem-contato{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mensagem-contato h1{
+        font-family: var(--font-secundary);
+        font-weight: 300;
+        font-size: 2rem;
+        margin-top: 3rem;
+        padding: 2rem 0 1.5rem 0;
+    }
+
+    .mensagem-contato span{    
+        font-weight: 600;
+    }
+
+    .mens-contato{
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .mens-contato input{
+        font-family: var(--font-secundary);
+        font-size: 1.1rem;
+        margin: .3rem 0;
+        color: #000000;    
+    }
+
+    .mens-contato textarea{
+        font-family: var(--font-secundary);
+        font-size: 1.1rem;
+        margin: .3rem 0;
+        color: #000000;    
+    }
+
+    .mens-contato button{
+        font-family: var(--font-secundary);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: .3rem 0;
+        background-color: #e65f81;
+        color: #ffffff;
+        border: none;
+        border-radius: .3rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;    
+    }
+
+    .mens-contato button:hover{
+        transform: scale(0.98);
+    }
+
+    #nome{
+        width: 99%;
+    }
+
+    #celular{
+        width: 38%;
+    }
+
+    #email{
+        width: 60%;
+    }
+
+    #email-error{
+        color: #ff0000;
+    }
+
+    #assunto{
+        width: 99% ;
+    }
+    
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .checkbox-container label{
+        margin-left: .8rem;
+    }
+    
+    
+    /*Nossos Contatos*/
+    .formulario-contato{
+        width: 100%;
+        height: 30rem;
+        background-color: var(--background-color1);
+    }
+
+    .form-contato-header{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form-contato-header h1{
+        font-family: var(--font-secundary);
+        font-weight: 300;
+        font-size: 2rem;
+        margin-top: 3rem;
+        padding: 2rem 0 1.5rem 0;
+    }
+
+    .form-contato-header span{    
+        font-weight: 600;
+    }
+
+    .form-contato-header p{
+        font-family: var(--font-primary);
+        text-align: center;
+        color: #6e6e6e;
+        line-height: 1.5rem;
+    }
+
+    .form-contato-body{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contato-body{
+        padding: 5rem 1rem 3rem 1rem;
+        height: 5rem;
+        display: flex;        
+    }
+
+    .contato-body-cursor{
+        cursor: pointer;
+    }
+
+    .contato-body i{
+        font-size: 4rem;
+        color: var(--highlight-color);
+        padding-bottom: 1rem;    
+    }
+
+    .contato-body h1{
+        font-family: var(--font-secundary);
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .contato-body h2{
+        font-family: var(--font-primary);
+        color: #6e6e6e;
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-decoration: none;
+    }   
+    
+    
+    /*Whatsapp Button*/
+    .whatsapp{
+        position: fixed;
+        bottom: 1.2rem;
+        right: 1.2rem;
+        z-index: 1000;
+    }
+
+    .whatsapp{
+        font-size: 2.4rem;
+        color: #25d366;
+        background-color: #ffffff;
+        border-radius: 50%;
+        padding: .5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp:hover {
+        background-color: #25d366; /* Altera a cor de fundo no hover */
+        color: #fff;
+    }
+
+
+    /*Politicas de Privacidade e Cookies*/
+    .politica-config{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: .5rem;        
+    }
+
+    .politica-config-privacidade{
+        margin: 0 .5rem;
+        transition: transform 0.3s ease;        
+    }
+
+    .politica-config-cookies{
+        margin: 0 .5rem;
+        transition: transform 0.3s ease;        
+    }
+
+    .politica-config-privacidade:hover,
+    .politica-config-cookies:hover{
+        transform: scale(0.95);
+    }
+
+    .politica-config-privacidade a,
+    .politica-config-cookies a{
+        color: #000000;
+        font-family: var(--font-secundary);
+        font-size: .9rem;
+        font-weight: 500;
+        transition: .3s;                
+    }
+
+    .politica-config-privacidade a:hover,
+    .politica-config-cookies a:hover{
+        color: var(--highlight-color);
+        transform: scale(0.5);
+    }
+
+    .politica-config-privacidade i,
+    .politica-config-cookies i{
+        font-size: .6rem;        
+    }
+
+
+    /*Rodapé*/
+    footer{
+        background-color: var(--background-color2);
+    }
+
+    .footer-config {
+        width: 57%;
+        margin: 0 auto; 
+        padding: 1.5rem 0;        
+    }
+    
+    .footer-config p {
+        font-family: var(--font-secundary);
+        font-weight: 500;
+        text-align: center; 
+    }
+    
+    .footer-config a {
+        text-decoration: none; /* Remove a formatação padrão de link (sublinhado) */
+        color: var(--highlight-color); 
+    }
+}
