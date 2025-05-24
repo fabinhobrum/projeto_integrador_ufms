@@ -181,9 +181,9 @@
         <section>
             <div class="mensagem-contato">
                 <h1>Formulário <span>de Contato</span> </h1>
-                <form  class="mens-contato" id="myForm" action="https://api.staticforms.xyz/submit" method="post">
+                <form  class="mens-contato" id="myForm" action="salvar_contato.php" method="post">
                     <input type="hidden" name="accessKey" value="e2cc32b8-e928-4638-86ea-a24e7d0f8c1d">
-                    <input type="hidden" name="redirectTo" value="https://fabiobrum.dev.br/index.html">
+                    <input type="hidden" name="redirectTo" value="https://projeto.fabiobrum.dev.br/index.html">
                     <input type="text" id="nome" name="name" placeholder="Seu Nome*" required>
                     <div>
                         <input type="tel" id="celular" name="phone" placeholder="Seu número de contato*" required>
@@ -239,6 +239,9 @@
         </section>
         <!--Rodapé-->
         <footer>
+            <div style="text-align: center;">
+                <a href="crud/login.php" class="botao-admin">Área Administrativa</a>
+            </div>
             <div class="footer-config">
                 <p>Desenvolvedor Web Fabio Brum. <a href="tel:+55(67) 99260-2544">Cel: (67) 99260-2544</a>. Copyright © 2025. Todos os direitos reservados</p>
             </div>
