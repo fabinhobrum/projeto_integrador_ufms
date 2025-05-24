@@ -1,0 +1,36 @@
+[24-May-2025 00:15:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'fabiobru_fabbrum'@'localhost' (using password: YES) in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php:7
+Stack trace:
+#0 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php(7): mysqli->__construct()
+#1 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/index.php(2): include('/home/fabiobru/...')
+#2 {main}
+  thrown in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php on line 7
+[24-May-2025 00:16:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'fabiobru_fabbrum'@'localhost' (using password: YES) in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php:7
+Stack trace:
+#0 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php(7): mysqli->__construct()
+#1 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/index.php(2): include('/home/fabiobru/...')
+#2 {main}
+  thrown in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php on line 7
+[24-May-2025 00:16:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'fabiobru_fabbrum'@'localhost' (using password: YES) in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php:7
+Stack trace:
+#0 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php(7): mysqli->__construct()
+#1 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/index.php(2): include('/home/fabiobru/...')
+#2 {main}
+  thrown in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php on line 7
+[24-May-2025 00:17:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'fabiobru_fabbrum'@'localhost' (using password: YES) in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php:7
+Stack trace:
+#0 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php(7): mysqli->__construct()
+#1 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/index.php(2): include('/home/fabiobru/...')
+#2 {main}
+  thrown in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php on line 7
+[24-May-2025 00:17:14 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'fabiobru_fabbrum'@'localhost' (using password: YES) in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php:7
+Stack trace:
+#0 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php(7): mysqli->__construct()
+#1 /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/index.php(2): include('/home/fabiobru/...')
+#2 {main}
+  thrown in /home/fabiobru/projeto.fabiobrum.dev.br/meucrud/conexao.php on line 7
+[24-May-2025 01:24:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'fabiobru_fabbrum'@'localhost' (using password: YES) in /home/fabiobru/projeto.fabiobrum.dev.br/crud/conexao.php:7
+Stack trace:
+#0 /home/fabiobru/projeto.fabiobrum.dev.br/crud/conexao.php(7): mysqli->__construct()
+#1 /home/fabiobru/projeto.fabiobrum.dev.br/crud/index.php(7): include('/home/fabiobru/...')
+#2 {main}
+  thrown in /home/fabiobru/projeto.fabiobrum.dev.br/crud/conexao.php on line 7
